@@ -1,0 +1,145 @@
+@font-face{
+    font-family: 'Flash Back';
+    src: url('../fonts/Flash\ Back\ -\ Demo.ttf');
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    font-size: 16px;
+    font-family: "Helvetica", sans-serif;
+}
+
+body{
+    height: 100%;
+    width: 100vw;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    max-width: 1800px;
+}
+
+.nav__ul{
+    list-style: none;
+    font-size: 1.275em;
+    font-weight: 500;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 1em;
+    color: #fff;
+    grid-template-columns: 50% repeat(4, 1fr);
+}
+
+.nav__ul__li{
+    padding: .5em;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav__ul__li:hover{
+    color: rgb(235, 56, 2);
+}
+
+.nav__ul__li:first-child{
+   grid-column: 2;
+}
+
+.nav__ul__li--accent{
+    background: rgb(235, 56, 2);
+}
+
+.nav__ul__li--accent:hover{
+    color: #fff;
+}
+
+.section{
+    padding: 2em;
+}
+
+.hero{
+    height: 100%;
+    background: url('../images/bg.jpg'), linear-gradient(rgb(0, 59, 87), rgb(0, 59, 87));
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    /* grid-template-rows: repeat(4, 25%); */
+    grid-template-rows: 25% repeat(3, 1fr);
+}
+
+.hero__title{
+    font-family: "Flash Back";
+    font-size: 16em;
+    line-height: 1.125em;
+    grid-row: 2;
+    cursor: pointer;
+}
+
+.accent{
+    color: rgb(235,56,2);
+}
+
+.hero__p{
+    font-size: 1.5em;
+    grid-row: 3;
+    max-width: 800px;
+    text-align: center;
+}
+
+.hero__arrow{
+    grid-row: -1;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    background: rgb(235, 56, 2);
+    position: relative;
+    cursor: pointer;
+    transition: transform .2s cubic-bezier(.48,1.21,1,1.25);
+}
+
+.hero__arrow::before,
+.hero__arrow::after{
+    content: '';
+    position: absolute;
+    transform-origin: center;
+    height: 50%;
+    width: 20%;
+    background: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.hero__arrow::before{
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%) rotate(-45deg);
+}
+
+.hero__arrow::after{
+    top: 50%;
+    left: 50%;
+    transform: translate(7%, -50%) rotate(45deg);
+}
+
+.hero__arrow:hover{
+    transform: translateY(-10px);
+}
